@@ -1,10 +1,9 @@
+name: Push image to ECR
 
 on:
   push:
     tags:
       - '*'
-
-name: Push image to ECR
 
 jobs:
   deploy:
