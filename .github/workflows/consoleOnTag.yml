@@ -1,0 +1,14 @@
+name: Push image to ECR
+
+on:
+  push:
+    tags:
+    - '*'
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set selected color
+        run: echo 'This is a test'
+        id: random-color-generator
