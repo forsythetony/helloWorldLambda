@@ -35,7 +35,7 @@ jobs:
           # For some reason attempting to use the output from 
           # `login-ecr` resulted in a malformed url
           # ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REGISTRY: 220387809337.dkr.ecr.us-east-1.amazonaws.com
           ECR_REPOSITORY: hello-world-container
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$VERSION .
