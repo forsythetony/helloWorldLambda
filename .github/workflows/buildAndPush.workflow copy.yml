@@ -32,6 +32,9 @@ jobs:
       - name: Build, tag, push to AWS ECR
         id: build-tag-push-ecr
         env:
+          # For some reason attempting to use the output from 
+          # `login-ecr` resulted in a malformed url
+          # ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: hello-world-container
         run: |
